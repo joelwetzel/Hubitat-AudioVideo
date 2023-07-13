@@ -1,5 +1,9 @@
 # Hubitat-AudioVideo
-This repo is a single place to document my experiments in controlling AV equipment from Hubitat and related systems.
+This repo is a single place to document my experiments in controlling AV equipment from a Hubitat installation.
+
+This is an area of functionality that is less developed (by Hubitat and the community) than things like lights, locks, motions sensors, etc.  Hubitat supports some smart receivers, but not a lot else.
+
+My efforts certainly don't solve it all, but solved my own use cases.  Hopefully it can provide inspiration so that either Hubitat or the community can develop a larger set of tools.
 
 ## Context
 I have an extensively developed Hubitat installation in my home.  I have it connected up to HomeKit and to Alexa.  Control of the devices generally happens through 3 mechanisms (from highest usage to lowest):
