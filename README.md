@@ -52,6 +52,15 @@ Most of my HomeBridge is done from Raspberry Pis, but since I was iterating this
 - I ran an "npm install" and "npm run build" and "npm link" in the local repo folder for homebridge-appletv.  This automatically made the plugin show up in my dev HomeBridge.  Those instructions came from: https://github.com/homebridge/homebridge-plugin-template
 - After that, you have to follow the instructions to pair an AppleTV and update the Homebridge config for it: https://github.com/HuJohner/homebridge-appletv#retrieving-credentials
 
+### 3. Ability to control an HDMI switch from Hubitat
+
+First I had to find an HDMI switch with the features I wanted, that I believed I could control.  I bought and tested several.  I settled on the AV Access 4KMX42-H2A:  https://www.avaccess.com/products/4kmx42-h2a/
+
+- It has 4 inputs and 2 outputs.  I don't need the 2nd output, but it's not a problem.
+- It can turn the tv on and off via CEC.  We already have tv power control, but it doesn't hurt to have an extra way to do this.
+- With HDCP 2.2, it supports resolutions up to 4K@60Hz HDR.
+- It can be controlled via Serial interface.  The API reference is here:  https://avaccess.com/wp-content/uploads/2022/03/API-Command-Set_4KMX42-H2A-V1.0.0.pdf
+
 
 
 
