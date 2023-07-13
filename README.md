@@ -70,6 +70,18 @@ Next, this hdmi switch can be controlled via Serial.  How am I going to connect 
 
 Of course this could be done without MQTT.  My ESP firmware could expose a webserver for the Hubitat driver to contact directly.  But I've already had experience and success mediating through MQTT, and especially like the traceability it gives me while debugging.  So I've kept that complication.
 
+### 4. Expose the HDMI switch to HomeKit
+
+TODO
+
+### 5. Configure HomeKit with scenes for the AV equipment
+
+TODO
+
+### 6. Integrate with Alexa routines
+
+TODO
+
 
 
 
