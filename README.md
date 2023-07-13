@@ -76,7 +76,15 @@ Of course this could be done without MQTT.  My ESP firmware could expose a webse
 
 ### 4. Expose the HDMI switch to HomeKit
 
-TODO
+The Hubitat driver for the HDMI switch implements Hubitat's "MediaInputSource" capability.  This capability allows for switching between two different inputs.
+
+Unfortunately, it's not well supported yet.  I don't think it's used very often.  I use this HomeBridge plugin to connect my Hubitat to HomeKit:  https://github.com/danTapps/homebridge-hubitat-makerapi  Unfortunately, it does not support "MediaInputSource".
+
+However, I used it as a base to make my own HomeBridge plugin.  My plugin is here:  https://github.com/joelwetzel/homebridge-hubitat-makerapi
+
+My plugin ONLY looks for - and registers with HomeKit - Hubitat devices with the MediaInputSource capability. It translates it into an appropriate accessory type in HomeKit.  In HomeKit, the accessory has a category of TELEVISION, and has 3 services:  Television, InputSource, and Switch.  In the HomeApp, this renders it as a screen with a power button and an input selector.
+
+Extra installation step:  Television devices have to be published as an "external accessory" in homebridge.  This means they won't be included by default when adding the HomeBridge to your Home app.  The television device has to be added separately.  This is documented here: TODO
 
 ### 5. Configure HomeKit with scenes for the AV equipment
 
