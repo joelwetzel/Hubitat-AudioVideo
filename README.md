@@ -76,8 +76,6 @@ Next, this hdmi switch can be controlled via Serial.  How am I going to connect 
 
 Of course this could be done without MQTT.  My ESP firmware could expose a webserver for the Hubitat driver to contact directly.  But I've already had experience and success mediating through MQTT, and especially like the traceability it gives me while debugging.  So I've kept that complication.
 
-TODO: Move this off of my iMac, onto Raspberry Pi.
-
 TODO: Document the hardware/firmware more.
 
 ### 4. Expose the HDMI switch to HomeKit
@@ -105,7 +103,8 @@ TODO: Link to the documentation for how to add an external accessory.
 
 Issue:  The Home.app on iPhone has a UI bug involving television pickers.  Sometimes, when you turn the power on, the input selector becomes deactivated, and if you oscillate power on and off, the input selector's activation status will always be the opposite of what it should be.  Therefore, I don't really use it directly.  I use the Scenes to control everything.
 
-TODO: I should publish this plugin to npm.
+TODO: Move this off of my iMac, onto Raspberry Pi.
+
 
 ### 5. Configure HomeKit with scenes for the AV equipment
 
