@@ -86,7 +86,7 @@ The Hubitat driver for the HDMI switch implements Hubitat's "MediaInputSource" c
 
 Unfortunately, it's not well supported yet.  I don't think it's used very often.  I use this HomeBridge plugin to connect my Hubitat to HomeKit:  https://github.com/danTapps/homebridge-hubitat-makerapi  Unfortunately, it does not support "MediaInputSource".
 
-However, I used it as a base to make my own HomeBridge plugin.  My plugin is here:  https://github.com/joelwetzel/homebridge-hubitat-makerapi
+However, I used it as a base to make my own HomeBridge plugin.  My plugin is here: https://github.com/joelwetzel/homebridge-hubitat-mediainputsource
 
 TODO: My repo was a fork.  Make my own repo that is properly named.
 
