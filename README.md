@@ -1,4 +1,4 @@
-# Hubitat-AudioVideo
+# Hubitat - Adventures in Audio/Video
 This repo is a single place to document my experiments in controlling AV equipment from a Hubitat installation.
 
 This is an area of functionality that is less developed (by Hubitat and the community) than things like lights, locks, motions sensors, etc.  Hubitat supports some smart receivers, but not a lot else.
@@ -60,51 +60,11 @@ TODO: This is working well now.  I should move it back over to a Raspberry Pi, s
 
 ### 3. Ability to control an HDMI switch from Hubitat
 
-First I had to find an HDMI switch with the features I wanted, that I believed I could control.  I bought and tested several.  I settled on the AV Access 4KMX42-H2A:  https://www.avaccess.com/products/4kmx42-h2a/
-
-- It has 4 inputs and 2 outputs.  I don't need the 2nd output, but it's not a problem.
-- It can turn the tv on and off via CEC.  We already have tv power control, but it doesn't hurt to have an extra way to do this.
-- With HDCP 2.2, it supports resolutions up to 4K@60Hz HDR.
-- It can be controlled via Serial interface.  The API reference is here:  https://avaccess.com/wp-content/uploads/2022/03/API-Command-Set_4KMX42-H2A-V1.0.0.pdf
-
-Next, this hdmi switch can be controlled via Serial.  How am I going to connect to that from Hubitat?  There are probably many ways, but my approach was:
-
-1. Write a driver for Hubitat.  This driver publishes/subscribesTo messages over MQTT.
-2. I already had an MQTT server running in my network, for other projects.
-3. Write firmware for an ESP8266 board.  It will publish/subscribeTo messages over MQTT, in order to communicate with the Hubitat driver.
-4. The ESP board can talk to the HDMI switch over serial.  However, ESP8266 outputs serial as TTY, not RS232.  The HDMI switch expects RS232.  So I have to pass the signal through a converter:  https://www.amazon.com/gp/product/B091TN2ZPY/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1
-
-Of course this could be done without MQTT.  My ESP firmware could expose a webserver for the Hubitat driver to contact directly.  But I've already had experience and success mediating through MQTT, and especially like the traceability it gives me while debugging.  So I've kept that complication.
-
-TODO: Document the hardware/firmware more.
+Repo and documentation:  https://github.com/joelwetzel/Hubitat-4KMX42-H2A
 
 ### 4. Expose the HDMI switch to HomeKit
 
-The Hubitat driver for the HDMI switch implements Hubitat's "MediaInputSource" capability.  This capability allows for switching between two different inputs.
-
-Unfortunately, it's not well supported yet.  I don't think it's used very often.  I use this HomeBridge plugin to connect my Hubitat to HomeKit:  https://github.com/danTapps/homebridge-hubitat-makerapi  Unfortunately, it does not support "MediaInputSource".
-
-However, I used it as a base to make my own HomeBridge plugin.  My plugin is here: https://github.com/joelwetzel/homebridge-hubitat-mediainputsource
-
-The plugin is also registered with NPM, so you can add it to any HomeBridge by searching for and installing homebridge-hubitat-mediainputsource.  A valid config for the plugin will look like:
-
-> {
->     "platform": "Hubitat-MakerAPI-HDMI-Switch",
->     "name": "Hubitat-MakerAPI-HDMI-Switch",
->     "app_url": "http://192.168.1.113/apps/api/2/",
->     "access_token": "REDACTED"
-> }
-
-My plugin queries Hubitat just like danTapps's plugin, but it ONLY looks for Hubitat devices with the MediaInputSource capability. It translates it into an appropriate accessory type in HomeKit.  In HomeKit, the accessory has a category of TELEVISION, and has 3 services:  Television, InputSource, and Switch.  In the HomeApp, this renders it as a screen with a power button and an input selector.
-
-Extra installation step:  Television devices have to be published as an "external accessory" in homebridge.  This means they won't be included by default when adding the HomeBridge to your Home app.  The television device has to be added separately.
-
-TODO: Link to the documentation for how to add an external accessory.
-
-Issue:  The Home.app on iPhone has a UI bug involving television pickers.  Sometimes, when you turn the power on, the input selector becomes deactivated, and if you oscillate power on and off, the input selector's activation status will always be the opposite of what it should be.  Therefore, I don't really use it directly.  I use the Scenes to control everything.
-
-TODO: Move this off of my iMac, onto Raspberry Pi.
-
+Repo and documentation:  https://github.com/joelwetzel/homebridge-hubitat-mediainputsource
 
 ### 5. Configure HomeKit with scenes for the AV equipment
 
