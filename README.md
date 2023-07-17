@@ -111,7 +111,11 @@ I've set up several scenes in the Home app, with settings like this:
 
 ### 6. Integrate with Alexa routines
 
-TODO
+Alexa can't set HomeKit scenes directly, so I created virtual switches (that auto-off after a couple seconds) in Hubitat that are exposed to both Alexa and HomeKit.  Then, for example:
+
+- Create a routine in Alexa.  If I say something like "Alexa, turn on Apple TV", it will activate the vAppleTV virtual switch.
+- This gets sent back to Hubitat, and then to HomeKit.
+- Create an automation in HomeKit.  If the vAppleTV virtual switch turns on, activate the "Apple TV" scene.
 
 
 
