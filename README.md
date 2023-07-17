@@ -56,6 +56,8 @@ Most of my HomeBridge is done from Raspberry Pis, but while I was iterating this
 - I ran an "npm install" and "npm run build" and "npm link" in the local repo folder for homebridge-appletv.  This automatically made the plugin show up in my dev HomeBridge.  Those instructions came from: https://github.com/homebridge/homebridge-plugin-template
 - After that, you have to follow the instructions to pair an AppleTV and update the Homebridge config for it: https://github.com/HuJohner/homebridge-appletv#retrieving-credentials
 
+TODO: This is working well now.  I should move it back over to a Raspberry Pi, so that I don't have to keep my iMac on.
+
 ### 3. Ability to control an HDMI switch from Hubitat
 
 First I had to find an HDMI switch with the features I wanted, that I believed I could control.  I bought and tested several.  I settled on the AV Access 4KMX42-H2A:  https://www.avaccess.com/products/4kmx42-h2a/
@@ -74,6 +76,10 @@ Next, this hdmi switch can be controlled via Serial.  How am I going to connect 
 
 Of course this could be done without MQTT.  My ESP firmware could expose a webserver for the Hubitat driver to contact directly.  But I've already had experience and success mediating through MQTT, and especially like the traceability it gives me while debugging.  So I've kept that complication.
 
+TODO: Move this off of my iMac, onto Raspberry Pi.
+
+TODO: Document the hardware/firmware more.
+
 ### 4. Expose the HDMI switch to HomeKit
 
 The Hubitat driver for the HDMI switch implements Hubitat's "MediaInputSource" capability.  This capability allows for switching between two different inputs.
@@ -84,7 +90,9 @@ However, I used it as a base to make my own HomeBridge plugin.  My plugin is her
 
 My plugin ONLY looks for - and registers with HomeKit - Hubitat devices with the MediaInputSource capability. It translates it into an appropriate accessory type in HomeKit.  In HomeKit, the accessory has a category of TELEVISION, and has 3 services:  Television, InputSource, and Switch.  In the HomeApp, this renders it as a screen with a power button and an input selector.
 
-Extra installation step:  Television devices have to be published as an "external accessory" in homebridge.  This means they won't be included by default when adding the HomeBridge to your Home app.  The television device has to be added separately.  This is documented here: TODO
+Extra installation step:  Television devices have to be published as an "external accessory" in homebridge.  This means they won't be included by default when adding the HomeBridge to your Home app.  The television device has to be added separately.
+
+TODO: Link to the documentation for how to add an external accessory.
 
 Issue:  The Home.app on iPhone has a UI bug involving television pickers.  Sometimes, when you turn the power on, the input selector becomes deactivated, and if you oscillate power on and off, the input selector's activation status will always be the opposite of what it should be.  Therefore, I don't really use it directly.  I use the Scenes to control everything.
 
