@@ -46,9 +46,9 @@ Repo: https://github.com/joelwetzel/homebridge-appletv
 
 This was surprisingly difficult.  (Shockingly, Apple doesn't have this built into HomeKit.  Even weirder, your AppleTV devices DO show up in HomeKit, but are only useful for play/pause.  You can't turn the device on and off.)
 
-Different people have tried and published different api integrations over time.  Some of these have stopped working eventually, as Apple changes things in tvOS.  But, I found a great starting point at https://github.com/HuJohner/homebridge-appletv.
+Different people have tried and published different api integrations over time.  Some of these have stopped working eventually, as Apple changes things in tvOS.  But, I found a plugin that currently works at: https://github.com/HuJohner/homebridge-appletv.
 
-HuJohner has built a homebridge plugin that can control power on AppleTV, as well as some other commands.  I did make my own fork at https://github.com/joelwetzel/homebridge-appletv, and added a little state-caching logic, to improve reliability. (I found that it could forget the state of the Apple TV if the HomeBridge restarted, or in other edge cases.)
+HuJohner has built a homebridge plugin that can control power on AppleTV, as well as some other commands.  I did make my own fork at https://github.com/joelwetzel/homebridge-appletv, and added a little state-caching logic, to improve reliability. (I've sent it as a PR to HuJohner.)
 
 HuJohner's code requires the HomeBridge to have PyATV installed.  This can be tricky, but we figured out the process here:  https://github.com/HuJohner/homebridge-appletv/issues/1
 
