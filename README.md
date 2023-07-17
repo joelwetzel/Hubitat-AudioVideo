@@ -44,13 +44,13 @@ Note: This puts a requirement on where "scenes" can be defined in my system.  Th
 
 Repo: https://github.com/joelwetzel/homebridge-appletv
 
-This was surprisingly difficult.  (Shockingly, Apple doesn't have this built into HomeKit.  Even weirder, your AppleTV devices DO show up in HomeKit, but are only useful for play/pause.  You can't turn the device on and off.)
+Weirdly, Apple does not have this built into HomeKit.  Even weirder, your AppleTV devices DO show up as accessories in HomeKit, but are only able to play/pause.  The native integration has no way to wake up the Apple TV or put it to sleep.
 
-Different people have tried and published different api integrations over time.  Some of these have stopped working eventually, as Apple changes things in tvOS.  But, I found a plugin that currently works at: https://github.com/HuJohner/homebridge-appletv.
+Different people have tried and published different api integrations over time.  Some of these have stopped working eventually, as Apple changes things in tvOS.  But, I found a HomeBridge plugin that currently works at: https://github.com/HuJohner/homebridge-appletv.
 
-HuJohner has built a homebridge plugin that can control power on AppleTV, as well as some other commands.  I did make my own fork at https://github.com/joelwetzel/homebridge-appletv, and added a little state-caching logic, to improve reliability. (I've sent it as a PR to HuJohner.)
+HuJohner's plugin can control power on AppleTV, as well as some other commands.  I made my own fork at https://github.com/joelwetzel/homebridge-appletv, and added some state-caching logic, to improve reliability. (I've sent it as a PR to HuJohner.)
 
-HuJohner's code requires the HomeBridge to have PyATV installed.  This can be tricky, but we figured out the process here:  https://github.com/HuJohner/homebridge-appletv/issues/1
+HuJohner's code requires the HomeBridge system to have PyATV installed.  This can be tricky, but we figured out the process here:  https://github.com/HuJohner/homebridge-appletv/issues/1
 
 Most of my HomeBridge is done from Raspberry Pis, but while I was iterating this code, I set up a dev HomeBridge on my dev iMac.
 
