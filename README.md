@@ -42,6 +42,8 @@ Note: This puts a requirement on where "scenes" can be defined in my system.  Th
 
 ### 2. AppleTV power needs to be controllable
 
+Repo: https://github.com/joelwetzel/homebridge-appletv
+
 This was surprisingly difficult.  (Shockingly, Apple doesn't have this built into HomeKit.  Even weirder, your AppleTV devices DO show up in HomeKit, but are only useful for play/pause.  You can't turn the device on and off.)
 
 Different people have tried and published different api integrations over time.  Some of these have stopped working eventually, as Apple changes things in tvOS.  But, I found a great starting point at https://github.com/HuJohner/homebridge-appletv.
