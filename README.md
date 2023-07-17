@@ -90,7 +90,24 @@ Issue:  The Home.app on iPhone has a UI bug involving television pickers.  Somet
 
 ### 5. Configure HomeKit with scenes for the AV equipment
 
-TODO
+As mentioned earlier, my scenes need to be defined in HomeKit, because the LG tv and the AppleTV streaming device do not integrate with Hubitat.  The LG integrates directly to HomeKit, and the AppleTV integrates to HomeBridge.
+
+I've set up several scenes in the Home app, with settings like this:
+
+**Apple TV**
+- LG TV on
+- Apple TV on
+- HDMI Switch on and input set to Apple TV
+
+**Cable**
+- LG TV on
+- Apple TV off
+- HDMI Switch on and input set to Cable
+
+**TV Off**
+- LG TV off
+- Apple TV off
+- HDMI Switch off
 
 ### 6. Integrate with Alexa routines
 
