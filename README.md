@@ -88,7 +88,14 @@ Unfortunately, it's not well supported yet.  I don't think it's used very often.
 
 However, I used it as a base to make my own HomeBridge plugin.  My plugin is here: https://github.com/joelwetzel/homebridge-hubitat-mediainputsource
 
-TODO: My repo was a fork.  Make my own repo that is properly named.
+The plugin is also registered with NPM, so you can add it to any HomeBridge by searching for and installing homebridge-hubitat-mediainputsource.  A valid config for the plugin will look like:
+
+> {
+>     "platform": "Hubitat-MakerAPI-HDMI-Switch",
+>     "name": "Hubitat-MakerAPI-HDMI-Switch",
+>     "app_url": "http://192.168.1.113/apps/api/2/",
+>     "access_token": "REDACTED"
+> }
 
 My plugin ONLY looks for - and registers with HomeKit - Hubitat devices with the MediaInputSource capability. It translates it into an appropriate accessory type in HomeKit.  In HomeKit, the accessory has a category of TELEVISION, and has 3 services:  Television, InputSource, and Switch.  In the HomeApp, this renders it as a screen with a power button and an input selector.
 
