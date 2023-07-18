@@ -26,8 +26,8 @@ Other similar commands:
 - "Alexa, turn on Nintendo"
 - "Alexa, tv off"
 
-  ## Subgoals
-  To make this happen, I broke the work down into a number of subgoals, that could be developed/integrated/configured/tested individually.
+  ## Subtasks
+  To make this happen, I broke the work down into a number of subtasks, that could be developed/integrated/configured/tested individually.
 
   1. TV power needs to be controllable
   2. AppleTV power needs to be controllable
