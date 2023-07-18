@@ -3,6 +3,8 @@ This repo is a single place to document my experiments in controlling AV equipme
 
 This is an area of functionality that is less developed (by Hubitat and the community) than things like lights, locks, motions sensors, etc.  Hubitat supports some smart receivers, but not a lot else.
 
+It's also only barely supported by the hardware makers.  Some TVs can connect to HomeKit, but open APIs are scarce.  Some AVRs allow connection over telnet.  Soundbars generally don't.  Streaming devices are hit-and-miss for integrations.
+
 My efforts certainly don't solve it all, but solved my own use cases.  Hopefully it can provide inspiration so that either Hubitat or the community can develop a larger set of tools.
 
 ## Context
