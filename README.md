@@ -42,6 +42,8 @@ I have an LG C1 OLED. I haven't found any way to control it from Hubitat, but it
 
 Note: This puts a requirement on where "scenes" can be defined in my system.  They'll have to be defined in HomeKit, in order to control the tv.
 
+TODO: Try out this hubitat integration:  https://community.hubitat.com/t/port-lg-smart-tv-discovery-2012/12761/271
+
 ### 2. AppleTV power needs to be controllable
 
 Repo: https://github.com/joelwetzel/homebridge-appletv
