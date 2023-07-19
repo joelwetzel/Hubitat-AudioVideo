@@ -48,7 +48,7 @@ TODO: Try out this hubitat integration:  https://community.hubitat.com/t/port-lg
 
 Repo: https://github.com/joelwetzel/homebridge-appletv
 
-Weirdly, Apple does not have this built into HomeKit.  Even weirder, your AppleTV devices DO show up as accessories in HomeKit, but are only able to play/pause.  The native integration has no way to wake up the Apple TV or put it to sleep.
+Weirdly, Apple does not have this built into HomeKit.  Even weirder, AppleTV devices DO show up as accessories in HomeKit, but are only able to play/pause.  The native integration has no way to wake up the Apple TV or put it to sleep.
 
 Different people have tried and published different api integrations over time.  Some of these have stopped working eventually, as Apple changes things in tvOS.  But, I found a HomeBridge plugin that currently works at: https://github.com/HuJohner/homebridge-appletv.
 
