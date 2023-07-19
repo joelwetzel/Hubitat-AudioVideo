@@ -62,8 +62,6 @@ Most of my HomeBridge is done from Raspberry Pis, but while I was iterating this
 - I ran an "npm install" and "npm run build" and "npm link" in the local repo folder for homebridge-appletv.  This automatically made the plugin show up in my dev HomeBridge.  Those instructions came from: https://github.com/homebridge/homebridge-plugin-template
 - After that, you have to follow the instructions to pair an AppleTV and update the Homebridge config for it: https://github.com/HuJohner/homebridge-appletv#retrieving-credentials
 
-TODO: This is working well now.  I should move it back over to a Raspberry Pi, so that I don't have to keep my iMac on.
-
 ### 3. Ability to control an HDMI switch from Hubitat
 
 Repo and documentation:  https://github.com/joelwetzel/Hubitat-4KMX42-H2A
