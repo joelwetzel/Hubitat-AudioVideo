@@ -64,15 +64,19 @@ Most of my HomeBridge is done from Raspberry Pis, but while I was iterating this
 
 ### 3. Ability to control an HDMI switch from Hubitat
 
+I made a small microcontroller device to piggyback on the HDMI switch.  Then, I made a Hubitat driver to talk to it.
+
 Repo and documentation:  https://github.com/joelwetzel/Hubitat-4KMX42-H2A
 
 ### 4. Expose the HDMI switch to HomeKit
+
+I ended up building a Homebridge plugin to expose the HDMI switch device to HomeKit.
 
 Repo and documentation:  https://github.com/joelwetzel/homebridge-hubitat-mediainputsource
 
 ### 5. Configure HomeKit with scenes for the AV equipment
 
-As mentioned earlier, my scenes need to be defined in HomeKit, because the LG tv and the AppleTV streaming device do not integrate with Hubitat.  The LG integrates directly to HomeKit, and the AppleTV integrates to HomeBridge.
+My scenes need to be defined in HomeKit, because the LG tv and the AppleTV streaming device do not integrate with Hubitat.  The LG integrates directly to HomeKit, and the AppleTV integrates to HomeBridge.
 
 I've set up several scenes in the Home app, with settings like this:
 
