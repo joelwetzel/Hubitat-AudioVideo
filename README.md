@@ -52,7 +52,7 @@ Weirdly, Apple does not have this built into HomeKit.  Even weirder, AppleTV dev
 
 Different people have tried and published different api integrations over time.  Some of these have stopped working eventually, as Apple changes things in tvOS.  But, I found a HomeBridge plugin that currently works at: https://github.com/HuJohner/homebridge-appletv.
 
-HuJohner's plugin can control power on AppleTV, as well as some other commands.  I made my own fork at https://github.com/joelwetzel/homebridge-appletv, and added some state-caching logic, to improve reliability. (I've sent it as a PR to HuJohner.)
+HuJohner's plugin can control power on AppleTV, as well as some other commands.  I made my own fork at https://github.com/joelwetzel/homebridge-appletv, and added some state-caching logic, to improve reliability. (I've sent it as a PR to HuJohner, but until the PR is accepted, I published my own npm package.)
 
 HuJohner's code requires the HomeBridge system to have PyATV installed.  This can be tricky, but we figured out the process here:  https://github.com/HuJohner/homebridge-appletv/issues/1
 
