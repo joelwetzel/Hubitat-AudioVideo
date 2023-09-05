@@ -62,6 +62,10 @@ Most of my HomeBridge is done from Raspberry Pis, but while I was iterating this
 - I ran an "npm install" and "npm run build" and "npm link" in the local repo folder for homebridge-appletv.  This automatically made the plugin show up in my dev HomeBridge.  Those instructions came from: https://github.com/homebridge/homebridge-plugin-template
 - After that, you have to follow the instructions to pair an AppleTV and update the Homebridge config for it: https://github.com/HuJohner/homebridge-appletv#retrieving-credentials
 
+TODO: I'd like to control directly from Hubitat, instead of HomeBridge.
+      I am working on an npm bridge here: https://github.com/joelwetzel/http-appletv-bridge
+      I could extend this example to be my hubitat device driver:  https://github.com/hubitat/HubitatPublic/blob/master/examples/drivers/httpGetSwitch.groovy
+
 ### 3. Ability to control an HDMI switch from Hubitat
 
 I made a small microcontroller device to piggyback on the HDMI switch.  Then, I made a Hubitat driver to talk to it.
